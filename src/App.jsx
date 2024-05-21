@@ -1,9 +1,8 @@
-import Notification from "./components/Notification";
 import useNotification from "./hooks/use-notifications";
 
 const App = () => {
   const { triggerNotification, NotificationComponent } =
-    useNotification("top-right");
+    useNotification("top-left");
 
   return (
     <div>
@@ -11,6 +10,17 @@ const App = () => {
         onClick={() =>
           triggerNotification({
             type: "info",
+            message: "Hello",
+            duration: 3000,
+          })
+        }
+      >
+        Trigger
+      </button>
+      <button
+        onClick={() =>
+          triggerNotification({
+            type: "success",
             message: "Hello",
             duration: 3000,
           })
